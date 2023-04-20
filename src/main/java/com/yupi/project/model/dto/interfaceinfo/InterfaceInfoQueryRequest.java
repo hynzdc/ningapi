@@ -1,15 +1,21 @@
 package com.yupi.project.model.dto.interfaceinfo;
 
+import com.yupi.project.common.PageRequest;
 import lombok.Data;
 
 /**
  * @author hyn
  * @version 1.0.0
- * @description 新增请求
+ * @description
  * @date 2023/4/19
  */
 @Data
-public class InterfaceInfoAddRequest {
+public class InterfaceInfoQueryRequest extends PageRequest {
+    /**
+     * 主键
+     */
+    private Long id;
+
     /**
      * 名称
      */
@@ -26,11 +32,6 @@ public class InterfaceInfoAddRequest {
     private String url;
 
     /**
-     * 请求参数
-     */
-    private String requestParams;
-
-    /**
      * 请求头
      */
     private String requestHeader;
@@ -41,9 +42,18 @@ public class InterfaceInfoAddRequest {
     private String responseHeader;
 
     /**
+     * 接口状态（0-关闭，1-开启）
+     */
+    private Integer status;
+
+    /**
      * 请求类型
      */
     private String method;
 
-
+    /**
+     * 创建人
+     */
+    private Long userId;
 }
+
